@@ -5,7 +5,7 @@ import SearchDuoBar from './assets/components/SearchDuoBar'
 
 function App() {
   return (
-    <div className="mx-auto w-auto h-auto flex flex-col align-center justify-between">
+    <div className="mx-auto w-auto h-auto flex flex-col">
       <LogoImg />
       <CardsGames />
       <SearchDuoBar />
