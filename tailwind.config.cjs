@@ -13,12 +13,10 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        galaxy: "url('/Fundo.svg')"
+        galaxy: "url('/Fundo.svg')",
+        rainbowGradient: 'linear-gradient(89.86deg, #9572FC 23.08%, #43E7AD 33.94%, #E1D55D 44.57%)'
       },
       colors: {
-        rainbowPurple: '#9572FC',
-        rainbowSkyBlue: '#43E7AD',
-        raibownskyGreen: 'E2D45C'
       }
     },
   },
