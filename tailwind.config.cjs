@@ -14,9 +14,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         galaxy: "url('/Fundo.svg')",
-        rainbowGradient: 'linear-gradient(89.86deg, #9572FC 23.08%, #43E7AD 33.94%, #E1D55D 44.57%)'
+        rainbowGradient: 'linear-gradient(89.86deg, #9572FC 23.08%, #43E7AD 57.94%, #E1D55D 20.57%)',
+        infoGame: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 67.08%)'
       },
       colors: {
+        rainbowGradient: 'linear-gradient(89.86deg, #9572FC 23.08%, #43E7AD 57.94%, #E1D55D 20.57%)'
       }
     },
   },
