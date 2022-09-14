@@ -6,7 +6,7 @@ export default function SearchDuoBar(){
                     <p className="text-white font-black text-2xl">Não encontrou seu duo?</p>
                     <p className="text-zinc-400">Publique um anúncio para encontrar novos players!</p>
                 </div>
-                <button type="button" className="text-white w-48 h-12 bg-violet-500 rounded-lg">
+                <button type="button" className="text-white w-48 h-12 bg-violet-500 hover:bg-violet-600 rounded-lg">
                     Publicar anúncio
                 </button>
             </div>  
