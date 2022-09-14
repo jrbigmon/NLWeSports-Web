@@ -41,7 +41,7 @@ setElementInPagination()
 export default function CardsGames () {
     return (
         <div className="mx-16">
-            <h1 className="text-center text-white text-5xl font-black"> 
+            <h1 className="text-center text-white text-4xl font-black"> 
                 Seu <span className="bg-rainbowGradient text-transparent bg-clip-text">duo</span> está aqui 
             </h1>
 
@@ -54,7 +54,7 @@ export default function CardsGames () {
             >
                 {games.map((game, i)=> (
                     <SwiperSlide key={i}>
-                        <CardGame img={game}/>
+                        <CardGame img={game} name={'Nome do Jogo'} quantityAds={4}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
