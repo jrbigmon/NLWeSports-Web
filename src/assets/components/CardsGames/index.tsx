@@ -40,13 +40,14 @@ setElementInPagination()
 
 export default function CardsGames () {
     return (
-        <div>
+        <div className="mx-16">
             <h1 className="text-center text-white font-bold text-5xl"> Seu duo está aqui </h1>
 
-            <Swiper navigation={ games.length > 5 ? true : false }
-                slidesPerView={numberElementInPagination}
-                modules={[Navigation]}
+            <Swiper navigation={ games.length > numberElementInPagination ? true : false }
+                slidesPerView={ numberElementInPagination }
+                modules={ [Navigation] }
                 className="mySwiper mt-10"
+                loop={ true }
             >
                 {games.map((game, i)=> (
                     <SwiperSlide key={i}>
