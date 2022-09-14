@@ -42,23 +42,18 @@ export default function CardsGames () {
     return (
         <div>
             <h1 className="text-center text-white font-bold text-5xl"> Seu duo está aqui </h1>
-            
-            <div>
-                <Swiper navigation={ games.length > 5 ? true : false }
-                    slidesPerView={numberElementInPagination}
-                    modules={[Navigation]}
-                    className="mySwiper mt-10"
-                >
-                    <div className="mx-25">
-                        {games.map((game, i)=> (
-                            <SwiperSlide>
-                                <CardGame img={game} key={i} />
-                            </SwiperSlide>
-                        ))}
-                    </div>
-                </Swiper>
-                
-            </div>
+
+            <Swiper navigation={ games.length > 5 ? true : false }
+                slidesPerView={numberElementInPagination}
+                modules={[Navigation]}
+                className="mySwiper mt-10"
+            >
+                {games.map((game, i)=> (
+                    <SwiperSlide key={i}>
+                        <CardGame img={game}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
             
         </div>
     )
