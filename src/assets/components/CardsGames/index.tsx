@@ -1,44 +1,60 @@
 import CardGame from "../CardGame"
+import { useState, useEffect } from 'react';
+import nlwApi from "../../../services/nlwApi";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper"
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-import apexGame from "../../img/apexGame.png"
-import csGame from "../../img/csGame.png"
-import dotaGame from "../../img/dotaGame.png"
-import fortniteGame from "../../img/fortniteGame.png"
-import lolGame from "../../img/lolGame.png"
-import wwGame from "../../img/wwGame.png"
-
-const games = [apexGame, csGame, dotaGame, fortniteGame, lolGame, wwGame]
-
-let numberElementInPagination = 6
-
-function setElementInPagination(){
-    const width = window.screen.width
-    if(width < 1080){
-        numberElementInPagination = 5
-    }
-    if(width < 800){
-        numberElementInPagination = 3
-    }
-    if(width < 700){
-        numberElementInPagination = 2
-    } if(width < 500) {
-        numberElementInPagination = 1
-    }
-}
-
-setElementInPagination()
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 export default function CardsGames () {
+    // functions to handle 
+    let numberElementInPagination = 6
+
+    function setElementInPagination(){
+        const width = window.screen.width
+        if(width < 1080){
+            numberElementInPagination = 5
+        }
+        if(width < 800){
+            numberElementInPagination = 3
+        }
+        if(width < 700){
+            numberElementInPagination = 2
+        } if(width < 500) {
+            numberElementInPagination = 1
+        }
+    }
+
+    // set states values
+    const [games, setGames] = useState([])
+
+    // Execute the functions handles
+    setElementInPagination()
+
+    interface game {
+        id: string
+        title: string
+        bannerUrl: string
+        _count: {
+            ads: number
+        }
+    }
+
+    // API hooks efects
+    async function getGames() {
+        const response = await nlwApi.get("/games")
+        setGames( response.data )
+    }
+    useEffect(() => {
+        getGames()
+    }, [])
+
     return (
         <div className="mx-16">
             <h1 className="text-center text-white text-4xl font-black"> 
@@ -52,9 +68,9 @@ export default function CardsGames () {
                 className="mySwiper mt-10"
                 loop={ true }
             >
-                {games.map((game, i)=> (
+                {games.map((game:game, i:number)=> (
                     <SwiperSlide key={i}>
-                        <CardGame img={game} name={'Nome do Jogo'} quantityAds={4}/>
+                        <CardGame img={game.bannerUrl} title={game.title} quantityAds={game._count.ads}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
