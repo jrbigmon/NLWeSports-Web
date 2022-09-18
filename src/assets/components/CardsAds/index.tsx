@@ -52,11 +52,14 @@ export default function CardsAds () {
         hourEnd: string
         weekDays: []
         useVoiceChannel: boolean
+        game:{
+            title: string
+        }
     }
 
     return (
-        <div className="mx-16">
-             <h1 className="text-center text-white text-4xl font-black mt-4"> 
+        <div className="mx-16 mt-10">
+             <h1 className="text-center text-white text-4xl font-black"> 
                 Todos as <span className="bg-rainbowGradient text-transparent bg-clip-text">publicações</span> aqui
             </h1>
 
@@ -71,6 +74,7 @@ export default function CardsAds () {
                 {ads.map((ad:Ad, i:number)=> (
                     <SwiperSlide key={i} className="w-48 h-auto">
                         <CardAd
+                        gameName={ad.game.title}
                         name={ad.name}
                         yearsPlaying={ad.yearsPlaying}
                         weekDays={ad.weekDays}
