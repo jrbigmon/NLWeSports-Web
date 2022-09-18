@@ -34,16 +34,6 @@ export default function CardsAds () {
     }
     setElementInPagination()
 
-    // API hooks effects
-    const [ads, setAds] = useState([])
-    async function getAds() {
-        const response = await nlwApi.get("/ads")
-        setAds( response.data )
-    }
-    useEffect(() => {
-        getAds()
-    }, [])
-
     // Interface
     interface Ad {
         name: string
@@ -56,6 +46,16 @@ export default function CardsAds () {
             title: string
         }
     }
+
+    // API hooks effects
+    const [ads, setAds] = useState<Ad[]>([])
+    async function getAds() {
+        const response = await nlwApi.get("/ads")
+        setAds( response.data )
+    }
+    useEffect(() => {
+        getAds()
+    }, [])
 
     return (
         <div className="mx-16 mt-10">
@@ -71,7 +71,7 @@ export default function CardsAds () {
                 loop={ false }
                 
             >
-                {ads.map((ad:Ad, i:number)=> (
+                {ads.map((ad, i:number)=> (
                     <SwiperSlide key={i} className="w-48 h-auto">
                         <CardAd
                         gameName={ad.game.title}
