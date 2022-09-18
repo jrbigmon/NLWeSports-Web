@@ -2,7 +2,7 @@ import { MagnifyingGlassPlus } from 'phosphor-react'
 
 export default function SearchDuoBar(){
     return (
-        <div className="h-28 bg-rainbowGradient mt-8 mx-16 rounded-lg flex items-end">
+        <div className="h-28 bg-rainbowGradient mt-8 mx-16 mb-4 rounded-lg flex items-end">
             <div className="bg-[#2A2634] w-full h-[6.8rem] rounded-md py-6 px-8 flex justify-between items-center">
                 <div>
                     <p className="text-white font-black text-2xl">Não encontrou seu duo?</p>
