@@ -15,7 +15,6 @@ import 'swiper/css/scrollbar'
 export default function CardsGames () {
     // functions to handle 
     let numberElementInPagination = 6
-
     function setElementInPagination(){
         const width = window.screen.width
         if(width < 1080){
@@ -30,14 +29,11 @@ export default function CardsGames () {
             numberElementInPagination = 1
         }
     }
-
-    // set states values
-    const [games, setGames] = useState([])
-
     // Execute the functions handles
     setElementInPagination()
 
-    interface game {
+    // Interface
+    interface Game {
         id: string
         title: string
         bannerUrl: string
@@ -46,11 +42,15 @@ export default function CardsGames () {
         }
     }
 
+    // set states values
+    const [games, setGames] = useState<Game[]>([])
+    
     // API hooks efects
     async function getGames() {
         const response = await nlwApi.get("/games")
         setGames( response.data )
     }
+
     useEffect(() => {
         getGames()
     }, [])
@@ -68,7 +68,7 @@ export default function CardsGames () {
                 className="mySwiper mt-10"
                 loop={ true }
             >
-                {games.map((game:game, i:number)=> (
+                {games.map((game, i:number)=> (
                     <SwiperSlide key={i}>
                         <CardGame img={game.bannerUrl} title={game.title} quantityAds={game._count.ads}/>
                     </SwiperSlide>
