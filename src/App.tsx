@@ -6,7 +6,7 @@ import CardsAds from './assets/components/CardsAds'
 
 function App() {
   return (
-    <div className="mx-auto w-auto h-auto flex flex-col p-16">
+    <div className="mx-auto w-auto h-auto flex flex-col">
       <LogoImg />
       <CardsGames />
       <CardsAds />
