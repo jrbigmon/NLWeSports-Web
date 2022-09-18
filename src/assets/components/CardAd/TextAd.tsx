@@ -5,11 +5,11 @@ interface AdTextValues {
     colorText: string
 }
 
-export default function TextAd({title, value, colorTextSubTitle, colorText}: AdTextValues){
+export default function TextAd(props: AdTextValues){
     return (
-        <div className="w-28 h-9 flex">
-            <p className={`text-[${colorTextSubTitle}] font-normal text-sm`}>{title}</p>
-            <p className={`text-[${colorText}] font-bold text-sm`}>{value}</p>
+        <div className="flex flex-col mb-2 m-1">
+            <p className={`${props.colorTextSubTitle} font-normal text-sm`}>{props.title}</p>
+            <p className={`${props.colorText} font-bold text-sm`}>{props.value}</p>
         </div>
     )
 }
