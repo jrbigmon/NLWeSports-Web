@@ -8,7 +8,7 @@ interface Game {
     title: string
 }
 
-function ModalBody() {
+function ModalFormBody() {
     const [games, setGames] = useState<Game[]>([])
 
     async function getGames() {
@@ -109,4 +109,4 @@ function ModalBody() {
     )
 }
 
-export default ModalBody
+export default ModalFormBody

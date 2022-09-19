@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import SearchDuoBar from '../SearchDuoBar';
-import ModalBody from '../ModalFormBody'
+import ModalFormBody from '../ModalFormBody'
 
 export default () => (
 
@@ -16,7 +16,7 @@ export default () => (
 
         <Dialog.Title className='text-white text-3xl font-black'> Publique um anúncio </Dialog.Title>
         
-        <ModalBody />
+        <ModalFormBody />
 
       </Dialog.Content>
 
