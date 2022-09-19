@@ -1,4 +1,5 @@
 import { MagnifyingGlassPlus } from 'phosphor-react'
+import * as Dialog from "@radix-ui/react-dialog"
 
 export default function SearchDuoBar(){
     return (
@@ -8,10 +9,12 @@ export default function SearchDuoBar(){
                     <p className="text-white font-black text-2xl">Não encontrou seu duo?</p>
                     <p className="text-zinc-400">Publique um anúncio para encontrar novos players!</p>
                 </div>
-                <button type="button" className="inline-flex justify-between text-white w-48 h-12 bg-violet-500 hover:bg-violet-600 rounded-lg py-3 px-4">
-                    <MagnifyingGlassPlus size={28} /> 
-                    Publicar anúncio
-                </button>
+        
+                    <Dialog.Trigger  type="button" className="inline-flex justify-between text-white w-48 h-12 bg-violet-500 hover:bg-violet-600 rounded-lg py-3 px-4">
+                        <MagnifyingGlassPlus size={28} /> 
+                        Publicar anúncio
+                    </Dialog.Trigger>
+
             </div>  
         </div>
     )

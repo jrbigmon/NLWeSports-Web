@@ -1,8 +1,8 @@
 import './styles/main.css'
 import LogoImg from './assets/components/LogoImg'
 import CardsGames from './assets/components/CardsGames'
-import SearchDuoBar from './assets/components/SearchDuoBar'
 import CardsAds from './assets/components/CardsAds'
+import PublishAdModalWithSearchBar from './assets/components/PublishAdModalWithSearchBar'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <LogoImg />
       <CardsGames />
       <CardsAds />
-      <SearchDuoBar />
+      <PublishAdModalWithSearchBar/>
     </div>
   )
 }
