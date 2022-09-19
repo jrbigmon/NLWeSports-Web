@@ -27,7 +27,7 @@ export default function CardAd(props: Ad){
 
                 <TextAd 
                 title="Tempo de Jogo" 
-                value={props.yearsPlaying} 
+                value={`${props.yearsPlaying} ano(s)`} 
                 colorTextSubTitle="text-[#C4C4C6]" 
                 colorText="text-[#FFFFFF]"
                 />
