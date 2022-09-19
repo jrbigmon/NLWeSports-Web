@@ -19,13 +19,13 @@ export default function CardsAds () {
     let numberElementInPagination = 5
     function setElementInPagination(){
         const width = window.screen.width
-        if(width < 1080){
+        if(width < 1080 && width > 800){
             numberElementInPagination = 4
         }
-        if(width < 800){
+        if(width < 800 && width > 700){
             numberElementInPagination = 3
         }
-        if(width < 700){
+        if(width < 700 && width > 500){
             numberElementInPagination = 2
         } 
         if(width < 500) {
