@@ -13,9 +13,20 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
+interface Ad {
+    gameId: string
+    name: string
+    yearsPlaying: number
+    hourStart: string
+    hourEnd: string
+    weekDays: []
+    useVoiceChannel: boolean
+    game:{
+        title: string
+    }
+}
+
 export default function CardsAdsByGame() {
-    const { id } = useParams()
-    
     // Execute the functions handles
     let numberElementInPagination = 5
     function setElementInPagination(){
@@ -35,37 +46,34 @@ export default function CardsAdsByGame() {
     }
     setElementInPagination()
 
-    // Interface
-    interface Ad {
-        gameId: string
-        name: string
-        yearsPlaying: number
-        hourStart: string
-        hourEnd: string
-        weekDays: []
-        useVoiceChannel: boolean
-        game:{
-            title: string
-        }
-    }
-
     // API hooks effects
     const [ads, setAds] = useState<Ad[]>([])
-
-    async function getAds() {
+    const [titleGame, setTitleGame] = useState<string>('')
+    
+    const { id } = useParams()
+    
+    async function getAdsByGame() {
         const response = await nlwApi.get(`/games/${id}/ads`)
         setAds( response.data )
     }
+
+    async function getGameById() {
+        const response = await nlwApi.get(`/games/${id}`)
+        setTitleGame(response.data.title)
+    }
     
     useEffect(() => {
-        getAds()
-    }, [])
+        getAdsByGame()
+        getGameById()
+    },[useParams()])
 
     return (
         <div className="mx-16 mt-10">
-             <h1 className="text-center text-white text-4xl font-black"> 
-                Todos as <span className="bg-rainbowGradient text-transparent bg-clip-text">publicações</span> aqui
-            </h1>
+            { ads.length > 0 ? 
+                <h1 className="text-center text-white text-4xl font-black"> 
+                    Todos as <span className="bg-rainbowGradient text-transparent bg-clip-text">publicações</span> de {titleGame}
+                </h1> 
+                : '' }
 
             <Swiper 
                 navigation={ ads.length > numberElementInPagination ? true : false }
@@ -74,7 +82,7 @@ export default function CardsAdsByGame() {
                 className="mySwiper mt-10"
                 loop={ false }   
             >
-                {ads.map((ad, i:number)=> (
+                { ads.map((ad, i:number)=> (
                     <SwiperSlide key={i} className="w-48 h-auto">
                         <CardAd
                             gameName={ad.game.title}
@@ -86,7 +94,7 @@ export default function CardsAdsByGame() {
                             useVoiceChannel={ad.useVoiceChannel}
                         />
                     </SwiperSlide>
-                ))}
+                )) }
             </Swiper>
         </div>
     )
