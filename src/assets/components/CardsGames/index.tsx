@@ -70,7 +70,7 @@ export default function CardsGames () {
             >
                 {games.map((game, i:number)=> (
                     <SwiperSlide key={i}>
-                        <CardGame img={game.bannerUrl} title={game.title} quantityAds={game._count.ads}/>
+                        <CardGame id={game.id} img={game.bannerUrl} title={game.title} quantityAds={game._count.ads}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
