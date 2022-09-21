@@ -36,6 +36,7 @@ export default function CardsAds () {
 
     // Interface
     interface Ad {
+        discord: string
         name: string
         yearsPlaying: number
         hourStart: string
@@ -81,6 +82,7 @@ export default function CardsAds () {
                         hourStart={ad.hourStart}
                         hourEnd={ad.hourEnd}
                         useVoiceChannel={ad.useVoiceChannel}
+                        discord={ad.discord}
                         />
                     </SwiperSlide>
                 ))}

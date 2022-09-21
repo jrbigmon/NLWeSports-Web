@@ -1,4 +1,4 @@
-import { GameController } from 'phosphor-react'
+import Button from '../ModalDiscord/'
 import TextAd from './TextAd'
 
 interface Ad {
@@ -9,6 +9,7 @@ interface Ad {
     weekDays: []
     useVoiceChannel: boolean
     gameName: string
+    discord: string
 }
 
 export default function CardAd(props: Ad){
@@ -44,11 +45,9 @@ export default function CardAd(props: Ad){
                 colorTextSubTitle="text-[#C4C4C6]" 
                 colorText={props.useVoiceChannel ? "text-[#34D399]" : "text-[#FF0000]"}
                 />
-
-                <button className="bg-[#8B5CF6] text-white font-semibold text-sm flex justify-evenly items-center mx-auto rounded-lg p-2 w-[80%]">
-                    <GameController size={28} />
-                    Conectar
-                </button>
+                
+                <Button discord={props.discord}/>
+                
             </div>
         </div>
     )

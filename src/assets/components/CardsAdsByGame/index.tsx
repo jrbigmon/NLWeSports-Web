@@ -15,6 +15,7 @@ import 'swiper/css/scrollbar'
 
 interface Ad {
     gameId: string
+    discord: string
     name: string
     yearsPlaying: number
     hourStart: string
@@ -92,6 +93,7 @@ export default function CardsAdsByGame() {
                             hourStart={ad.hourStart}
                             hourEnd={ad.hourEnd}
                             useVoiceChannel={ad.useVoiceChannel}
+                            discord={ad.discord}
                         />
                     </SwiperSlide>
                 )) }
