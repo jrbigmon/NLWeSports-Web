@@ -11,6 +11,14 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+interface Game {
+    id: string
+    title: string
+    bannerUrl: string
+    _count: {
+        ads: number
+    }
+}
 
 export default function CardsGames () {
     // functions to handle 
@@ -31,16 +39,6 @@ export default function CardsGames () {
     }
     // Execute the functions handles
     setElementInPagination()
-
-    // Interface
-    interface Game {
-        id: string
-        title: string
-        bannerUrl: string
-        _count: {
-            ads: number
-        }
-    }
 
     // set states values
     const [games, setGames] = useState<Game[]>([])
