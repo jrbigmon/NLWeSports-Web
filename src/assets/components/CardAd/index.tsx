@@ -1,5 +1,6 @@
 import Button from '../ModalDiscord/'
 import TextAd from './TextAd'
+import WeekDays from './WeekDays'
 
 interface Ad {
     name: string
@@ -19,6 +20,7 @@ export default function CardAd(props: Ad){
                 <h1 className="text-center text-white font-bold">
                     { props.gameName.length > 20 ? `${(props.gameName).slice(0, 17)}...` : (props.gameName) }
                 </h1>
+
                 <TextAd 
                 title="Nome" 
                 value={props.name} 
@@ -38,7 +40,8 @@ export default function CardAd(props: Ad){
                 value={`${props.weekDays.length} dias * ${props.hourStart}-${props.hourEnd}`} 
                 colorTextSubTitle="text-[#C4C4C6]" 
                 colorText="text-[#FFFFFF]"
-                />
+                components={<WeekDays weekDays={props.weekDays} />}
+                /> 
 
                 <TextAd title="Chamada de áudio?" 
                 value={props.useVoiceChannel ? "Sim" : "Não"} 

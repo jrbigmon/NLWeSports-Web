@@ -22,8 +22,8 @@ interface Game {
 
 export default function CardsGames () {
     // functions to handle 
-    let numberElementInPagination = 6
-    function setElementInPagination(){
+    let numberElementInPagination = 6;
+    (function setElementInPagination(){
         const width = window.screen.width
         if(width < 1080){
             numberElementInPagination = 5
@@ -36,9 +36,7 @@ export default function CardsGames () {
         } if(width < 500) {
             numberElementInPagination = 1
         }
-    }
-    // Execute the functions handles
-    setElementInPagination()
+    })()
 
     // set states values
     const [games, setGames] = useState<Game[]>([])

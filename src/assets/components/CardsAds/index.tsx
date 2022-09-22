@@ -16,8 +16,8 @@ export default function CardsAds () {
     // functions to handle 
     
     // Execute the functions handles
-    let numberElementInPagination = 5
-    function setElementInPagination(){
+    let numberElementInPagination = 5;
+    (function (){
         const width = window.screen.width
         if(width < 1080 && width > 800){
             numberElementInPagination = 4
@@ -31,8 +31,7 @@ export default function CardsAds () {
         if(width < 500) {
             numberElementInPagination = 1
         }
-    }
-    setElementInPagination()
+    })()
 
     // Interface
     interface Ad {

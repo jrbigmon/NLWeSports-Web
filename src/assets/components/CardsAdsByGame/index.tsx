@@ -29,8 +29,8 @@ interface Ad {
 
 export default function CardsAdsByGame() {
     // Execute the functions handles
-    let numberElementInPagination = 5
-    function setElementInPagination(){
+    let numberElementInPagination = 5;
+    (function setElementInPagination(){
         const width = window.screen.width
         if(width < 1080 && width > 800){
             numberElementInPagination = 4
@@ -44,8 +44,7 @@ export default function CardsAdsByGame() {
         if(width < 500) {
             numberElementInPagination = 1
         }
-    }
-    setElementInPagination()
+    })()
 
     // API hooks effects
     const [ads, setAds] = useState<Ad[]>([])
