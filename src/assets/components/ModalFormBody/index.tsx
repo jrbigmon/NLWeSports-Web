@@ -45,7 +45,7 @@ function ModalFormBody() {
 
     return (
         <form 
-            className="text-sm" 
+            className="text-sm xs:text-xs sm:text-xs md:text-base lg-text-base" 
             onSubmit={e => {
                 executePostFunction(e)
                 window.location.reload()

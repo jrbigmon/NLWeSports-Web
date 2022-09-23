@@ -8,7 +8,7 @@ import {Route, Routes} from "react-router-dom"
 
 function App() {
   return (
-    <div className="mx-auto w-auto h-auto flex flex-col">
+    <div className="mx-auto w-auto h-auto flex flex-col max-w-[1380px]">
         <LogoImg />
         <CardsGames />
         <Routes>
