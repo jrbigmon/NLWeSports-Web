@@ -33,10 +33,10 @@ npm run preview
 ![alt text](./public/ReadmeImages/home-2.PNG)
 ### Ver todas as Ads de um jogo (Dota2)
 ![alt text](./public/ReadmeImages/ads-dota2-1.PNG)
-![alt text](./public/ReadmeImages/ads-dota2-2.PNG)
+![alt text](./public/ReadmeImages/ads-dota2-2.png)
 ![alt text](./public/ReadmeImages/ads-dota2-3.PNG)
-![alt text](./public/ReadmeImages/ads-dota2-4.PNG)
+![alt text](./public/ReadmeImages/ads-dota2-4.png)
 ### Criar publicação
-![alt text](./public/ReadmeImages/ads-modal-1.PNG)
+![alt text](./public/ReadmeImages/ads-modal-1.png)
 ![alt text](./public/ReadmeImages/ads-modal-2.PNG)
 ![alt text](./public/ReadmeImages/ads-modal-3.PNG)
