@@ -40,3 +40,37 @@ npm run preview
 ![alt text](./public/ReadmeImages/ads-modal-1.png)
 ![alt text](./public/ReadmeImages/ads-modal-2.PNG)
 ![alt text](./public/ReadmeImages/ads-modal-3.PNG)
+
+## Tecnologias utilizadas
+### Desenvolvimento 
+```json
+"devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "autoprefixer": "^10.4.10",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+ }
+```
+### Produção
+```json
+"dependencies": {
+    "@radix-ui/react-dialog": "^1.0.0",
+    "axios": "^0.27.2",
+    "copy-to-clipboard": "^3.3.2",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "phosphor-react": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0",
+    "sort-by": "^1.2.0",
+    "swiper": "^8.3.2"
+ }
+```
+
+## Muito Obrigado!
