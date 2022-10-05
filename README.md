@@ -1,4 +1,4 @@
-# NLWeSports-API
+# NLWeSports-Web
 ## Sobre 
 Essa aplicação foi criada para utilização do projeto NLW eSports da Rocket Seat.
 
